@@ -1,0 +1,831 @@
+# Redesign TOTAL `style.css` — Purple & Black Gaming UI
+
+Ganti seluruh isi `style.css` lama kamu dengan CSS di bawah ini.
+
+```css
+/* ================= RESET ================= */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+:root{
+  --bg:#07070d;
+  --card:#111827;
+  --card2:#1a1f2e;
+  --purple:#7c3aed;
+  --purple2:#9333ea;
+  --text:#f8fafc;
+  --soft:#94a3b8;
+  --border:rgba(139,92,246,.15);
+}
+
+body{
+  font-family:'Inter',sans-serif;
+  background:linear-gradient(to bottom,#07070d,#0f172a);
+  color:var(--text);
+}
+
+img{
+  max-width:100%;
+  display:block;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+/* ================= TOPBAR ================= */
+.topbar{
+  background:#050507;
+  border-bottom:1px solid rgba(255,255,255,.05);
+  color:#a78bfa;
+  text-align:center;
+  padding:10px;
+  font-size:12px;
+  letter-spacing:1px;
+}
+
+/* ================= HEADER ================= */
+.header-main{
+  position:sticky;
+  top:0;
+  z-index:999;
+
+  display:flex;
+  align-items:center;
+  gap:15px;
+
+  padding:18px 20px;
+
+  background:rgba(10,10,20,.8);
+  backdrop-filter:blur(14px);
+
+  border-bottom:1px solid rgba(255,255,255,.05);
+}
+
+.logo{
+  font-size:22px;
+  font-weight:800;
+  color:#fff;
+  letter-spacing:1px;
+
+  background:linear-gradient(135deg,#c084fc,#7c3aed);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+.search-box{
+  flex:1;
+}
+
+.search-box input{
+  width:100%;
+  padding:14px 18px;
+
+  background:#111827;
+  border:1px solid rgba(255,255,255,.06);
+  border-radius:14px;
+
+  color:#fff;
+  outline:none;
+
+  transition:.3s;
+}
+
+.search-box input:focus{
+  border-color:#7c3aed;
+  box-shadow:0 0 20px rgba(124,58,237,.25);
+}
+
+.header-right{
+  width:45px;
+  height:45px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  border-radius:12px;
+
+  background:#111827;
+  border:1px solid rgba(255,255,255,.05);
+
+  font-size:18px;
+}
+
+/* ================= NAVBAR ================= */
+.navbar{
+  display:flex;
+  flex-wrap:nowrap;
+  gap:14px;
+
+  padding:14px 20px;
+
+  overflow-x:auto;
+  -webkit-overflow-scrolling:touch;
+
+  background:#0f172a;
+  border-bottom:1px solid rgba(255,255,255,.05);
+}
+
+.navbar::-webkit-scrollbar{
+  display:none;
+}
+
+.navbar a{
+  text-decoration:none;
+  color:#cbd5e1;
+
+  padding:10px 16px;
+
+  border-radius:999px;
+
+  background:#111827;
+  border:1px solid transparent;
+
+  white-space:nowrap;
+
+  transition:.3s;
+
+  font-size:14px;
+  font-weight:600;
+}
+
+.navbar a:hover{
+  transform:translateY(-2px);
+  border-color:rgba(124,58,237,.5);
+}
+
+.navbar a.active{
+  background:linear-gradient(135deg,#7c3aed,#4c1d95);
+  color:#fff;
+  box-shadow:0 0 20px rgba(124,58,237,.35);
+}
+
+/* ================= HERO ================= */
+.hero{
+  padding:25px 20px;
+}
+
+.hero-main{
+  border-radius:28px;
+  overflow:hidden;
+
+  position:relative;
+
+  border:1px solid rgba(255,255,255,.05);
+
+  box-shadow:0 15px 40px rgba(0,0,0,.35);
+}
+
+.hero-link{
+  text-decoration:none;
+}
+
+.hero-image{
+  position:relative;
+}
+
+.hero-image img{
+  width:100%;
+  height:520px;
+  object-fit:cover;
+
+  filter:brightness(.7);
+}
+
+.hero-overlay{
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:0;
+
+  padding:40px;
+
+  background:linear-gradient(to top,rgba(0,0,0,.95),transparent);
+}
+
+.hero-overlay .category{
+  display:inline-block;
+
+  background:rgba(124,58,237,.2);
+  border:1px solid rgba(124,58,237,.3);
+
+  padding:8px 14px;
+  border-radius:999px;
+
+  color:#d8b4fe;
+  font-size:12px;
+  font-weight:700;
+
+  margin-bottom:16px;
+}
+
+.hero-overlay h1{
+  font-size:46px;
+  line-height:1.15;
+  margin-bottom:15px;
+  color:#fff;
+}
+
+.hero-overlay p{
+  max-width:700px;
+  color:#cbd5e1;
+  line-height:1.7;
+  font-size:16px;
+}
+
+/* ================= NEWS ================= */
+.news{
+  padding:10px 20px 40px;
+}
+
+.news-container{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:22px;
+}
+
+.news-card{
+  background:linear-gradient(180deg,#111827,#0f172a);
+
+  border-radius:24px;
+  overflow:hidden;
+
+  text-decoration:none;
+
+  border:1px solid var(--border);
+
+  transition:.35s ease;
+
+  position:relative;
+}
+
+.news-card:hover{
+  transform:translateY(-8px);
+  box-shadow:0 20px 35px rgba(124,58,237,.22);
+  border-color:rgba(124,58,237,.45);
+}
+
+.news-card img{
+  width:100%;
+  height:230px;
+  object-fit:cover;
+}
+
+.news-content{
+  padding:22px;
+}
+
+.news-content .category{
+  display:inline-block;
+
+  font-size:11px;
+  font-weight:700;
+
+  padding:6px 12px;
+
+  border-radius:999px;
+
+  background:rgba(124,58,237,.18);
+  color:#d8b4fe;
+
+  margin-bottom:14px;
+}
+
+.news-content h3{
+  font-size:21px;
+  line-height:1.45;
+  margin-bottom:12px;
+  color:#fff;
+}
+
+.news-content p{
+  color:#94a3b8;
+  line-height:1.7;
+  font-size:14px;
+}
+
+/* ================= TRENDING ================= */
+.trending{
+  padding:20px;
+  margin-top:10px;
+}
+
+.trending h3{
+  margin-bottom:22px;
+  font-size:24px;
+}
+
+
+  .trending-list{
+  display:flex;
+  gap:16px;
+
+  overflow-x:auto;
+  scroll-behavior:smooth;
+
+  padding-bottom:10px;
+
+  -webkit-overflow-scrolling:touch;
+}
+
+.trending-list::-webkit-scrollbar{
+  display:none;
+}
+
+.trending-item{
+  background:#111827;
+  border-radius:20px;
+
+  min-width:170px;
+  flex-shrink:0;
+
+  overflow:hidden;
+
+  text-decoration:none;
+
+  border:1px solid rgba(255,255,255,.05);
+
+  transition:.3s;
+}
+
+.trending-item:hover{
+  transform:translateY(-5px);
+  border-color:rgba(124,58,237,.4);
+}
+
+.trending-item img{
+  width:100%;
+  height:170px;
+  object-fit:cover;
+}
+
+.trending-content{
+  padding:18px;
+}
+
+.trending-content h4{
+  color:#fff;
+  line-height:1.5;
+  margin-bottom:10px;
+}
+
+.trending-content span{
+  color:#a78bfa;
+  font-size:13px;
+}
+
+/* ================= SOCIAL ================= */
+.social{
+  padding:50px 20px;
+}
+
+.social h3{
+  margin-bottom:25px;
+  font-size:24px;
+}
+
+.social-list{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:20px;
+}
+
+.social-item{
+  display:flex;
+  align-items:center;
+  gap:15px;
+
+  padding:20px;
+
+  border-radius:20px;
+
+  background:#111827;
+  border:1px solid rgba(255,255,255,.05);
+
+  text-decoration:none;
+  color:#fff;
+
+  transition:.3s;
+}
+
+.social-item:hover{
+  transform:translateY(-5px);
+  border-color:rgba(124,58,237,.4);
+  box-shadow:0 10px 25px rgba(124,58,237,.2);
+}
+
+.social-item img{
+  width:26px;
+  height:26px;
+  filter:invert(1);
+}
+
+.social-item h4{
+  margin-bottom:4px;
+}
+
+.social-item p{
+  color:#94a3b8;
+  font-size:13px;
+}
+
+/* ================= ABOUT ================= */
+.about{
+  padding:50px 20px;
+}
+
+.about-container{
+  max-width:1000px;
+  margin:auto;
+
+  background:linear-gradient(180deg,#111827,#0f172a);
+
+  border-radius:30px;
+
+  overflow:hidden;
+
+  border:1px solid rgba(255,255,255,.05);
+}
+
+.about-image img {
+  width:100%;
+  height:auto;
+  object-fit:contain;
+  display:block;
+}
+
+.about h3{
+  font-size:32px;
+  padding:30px 30px 10px;
+}
+
+.about p{
+  padding:0 30px;
+  color:#cbd5e1;
+  line-height:1.8;
+  margin-bottom:18px;
+}
+
+/* ================= FOOTER ================= */
+.footer{
+  margin-top:60px;
+
+  background:#050507;
+
+  border-top:1px solid rgba(255,255,255,.06);
+}
+
+.footer-container{
+  max-width:1200px;
+  margin:auto;
+
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:30px;
+
+  padding:50px 20px;
+}
+
+.footer-col h4{
+  margin-bottom:15px;
+  color:#fff;
+}
+
+.footer-col p,
+.footer-col li{
+  color:#94a3b8;
+  line-height:1.8;
+  list-style:none;
+}
+
+.navbar-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:12px;
+}
+
+.nav-item{
+  text-decoration:none;
+  color:#fff;
+
+  background:#111827;
+
+  border:1px solid rgba(255,255,255,.05);
+
+  border-radius:14px;
+
+  padding:14px;
+  text-align:center;
+
+  transition:.3s;
+}
+
+.nav-item:hover{
+  background:linear-gradient(135deg,#7c3aed,#4c1d95);
+}
+
+.footer-bottom{
+  text-align:center;
+  padding:18px;
+
+  color:#94a3b8;
+
+  border-top:1px solid rgba(255,255,255,.05);
+}
+
+/* ================= DETAIL PAGE ================= */
+.detail-container{
+  max-width:900px;
+  margin:auto;
+  padding:40px 20px;
+}
+
+.detail-category{
+  display:inline-block;
+
+  padding:8px 14px;
+
+  border-radius:999px;
+
+  background:rgba(124,58,237,.2);
+
+  color:#d8b4fe;
+
+  margin-bottom:18px;
+
+  font-size:13px;
+  font-weight:700;
+}
+
+.detail-title{
+  font-size:48px;
+  line-height:1.2;
+  margin-bottom:15px;
+}
+
+.detail-meta{
+  color:#94a3b8;
+  margin-bottom:30px;
+}
+
+.detail-image img{
+  width:100%;
+  border-radius:28px;
+}
+
+.detail-content{
+  margin-top:30px;
+
+  color:#e2e8f0;
+
+  line-height:2;
+  font-size:18px;
+}
+
+.detail-content h2{
+  margin-top:35px;
+  margin-bottom:15px;
+  font-size:28px;
+}
+
+.detail-content p{
+  margin-bottom:20px;
+}
+
+.detail-content blockquote{
+  padding:20px;
+
+  border-left:4px solid #7c3aed;
+
+  background:#111827;
+
+  border-radius:10px;
+
+  color:#cbd5e1;
+}
+
+/* ================= POPULAR ================= */
+.popular{
+  max-width:900px;
+  margin:40px auto;
+  padding:0 20px;
+}
+
+.section-header h3{
+  margin-bottom:25px;
+  font-size:24px;
+}
+
+.popular-list{
+  display:grid;
+  gap:18px;
+}
+
+.popular-item{
+  display:flex;
+  gap:18px;
+
+  text-decoration:none;
+  color:#fff;
+
+  background:#111827;
+
+  padding:15px;
+
+  border-radius:20px;
+
+  border:1px solid rgba(255,255,255,.05);
+
+  transition:.3s;
+}
+
+.popular-item:hover{
+  transform:translateY(-4px);
+  border-color:rgba(124,58,237,.35);
+}
+
+.popular-item img{
+  width:140px;
+  height:100px;
+  object-fit:cover;
+  border-radius:14px;
+}
+
+.popular-item h4{
+  margin-bottom:10px;
+  line-height:1.5;
+}
+
+.popular-item span{
+  color:#a78bfa;
+  font-size:13px;
+}
+
+/* ================= RESPONSIVE ================= */
+@media(max-width:1024px){
+
+  .news-container,
+  .trending-list,
+  .social-list{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .hero-image img{
+    height:420px;
+  }
+
+  .hero-overlay h1{
+    font-size:36px;
+  }
+}
+
+@media(max-width:768px){
+
+  .header-main{
+    padding:15px;
+  }
+
+  .logo{
+    font-size:18px;
+  }
+
+  .hero{
+    padding:15px;
+  }
+
+  .hero-image img{
+    height:320px;
+  }
+
+  .hero-overlay{
+    padding:20px;
+  }
+
+  .hero-overlay h1{
+    font-size:26px;
+  }
+
+  .hero-overlay p{
+    font-size:14px;
+  }
+
+  .news-container,
+  .trending-list,
+  .social-list,
+  .footer-container{
+    grid-template-columns:1fr;
+  }
+
+  .news-card img{
+    height:200px;
+  }
+
+  .detail-title{
+    font-size:32px;
+  }
+
+  .detail-content{
+    font-size:16px;
+  }
+
+  .popular-item{
+    flex-direction:column;
+  }
+
+  .popular-item img{
+    width:100%;
+    height:180px;
+  }
+
+  .navbar-grid{
+    grid-template-columns:1fr;
+  }
+}
+
+```
+
+## PENTING
+
+Kalau muncul error saat paste CSS:
+
+JANGAN ikut copy ini:
+
+```css
+```
+
+Karena itu hanya penanda markdown.
+
+Yang di-copy hanya isi CSS di dalamnya.
+
+Contoh:
+
+SALAH:
+
+```css
+/* css kamu */
+```
+
+BENAR:
+
+```css
+/* css kamu */
+```
+
+Navbar kategori sekarang juga sudah bisa discroll ke samping di mobile karena memakai:
+
+```css
+overflow-x:auto;
+flex-wrap:nowrap;
+white-space:nowrap;
+```
+
+Jadi menu seperti:
+
+* Informasi Moba
+* Seputar Moba
+* Moba Tips
+* Jasa & Layanan
+
+akan otomatis bisa digeser ke samping di HP.
+
+## HASIL YANG AKAN BERUBAH
+
+* Tampilan full esports premium
+* Dominan ungu + hitam
+* Hero lebih modern
+* Card berita glow effect
+* Layout desktop lebih profesional
+* Mobile jauh lebih clean
+* Navbar modern ala gaming portal
+* Hover animasi lebih smooth
+* Detail artikel premium style
+
+## YANG TIDAK RUSAK
+
+CSS ini hanya mengubah tampilan.
+
+System JS tetap aman karena:
+
+* ID tidak diubah
+* Struktur utama tetap sama
+* API tetap sama
+* Fetch tetap sama
+* Semua function JS tetap bekerja
+
+## REKOMENDASI TAMBAHAN
+
+Tambahkan font Inter di `index.html` dan `detail.html`:
+
+```html
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+```
+
+Taruh di atas:
+
+```html
+<link rel="stylesheet" href="style.css">
+```
