@@ -51,7 +51,7 @@ function renderDetail(post) {
     <h1 class="detail-title">${post.title}</h1>
 
     <div class="detail-meta">
-      Dipublish • ${post.date || "REKBEROFFICIAL"}
+      Dipublish • ${post.date || "rekbertokogame.pro"}
     </div>
 
     <div class="detail-image">
